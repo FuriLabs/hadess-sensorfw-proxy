@@ -45,4 +45,4 @@ target_include_directories(hadess-sensorfw-proxy PUBLIC
     sensorfw-core/include
 )
 
-install(TARGETS hadess-sensorfw-proxy RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS hadess-sensorfw-proxy RUNTIME DESTINATION /usr/libexec/)

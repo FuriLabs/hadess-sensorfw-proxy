@@ -49,13 +49,13 @@ sensorfw_proxy::core::Sensorfw::Sensorfw(
 
     char *new_str;
     if (asprintf(&new_str,"%s/%s", dbus_sensorfw_path, plugin_string()) == -1)
-        GINFO("Unable to create the plugin path.");
+        g_debug("Unable to create the plugin path.");
     else
         m_pluginPath.reset(new_str);
 
-    GINFO("Got plugin_string %s", plugin_string());
-    GINFO("Got plugin_interface %s", plugin_interface());
-    GINFO("Got plugin_path %s", plugin_path());
+    g_debug("Got plugin_string %s", plugin_string());
+    g_debug("Got plugin_interface %s", plugin_interface());
+    g_debug("Got plugin_path %s", plugin_path());
 
     dbus_event_loop.enqueue([this]{
         m_socket->initiateConnection(m_sessionid);
@@ -143,7 +143,7 @@ bool sensorfw_proxy::core::Sensorfw::load_plugin()
 
     if (err != NULL)
     {
-        GINFO("failed to call load_plugin: %s", err->message);
+        g_debug("failed to call load_plugin: %s", err->message);
         g_variant_unref(result);
         return false;
     }
@@ -173,7 +173,7 @@ void sensorfw_proxy::core::Sensorfw::request_sensor()
 
     if (!result)
     {
-        GINFO("failed to call request_sensor");
+        g_debug("failed to call request_sensor");
         return;
     }
 
@@ -183,7 +183,7 @@ void sensorfw_proxy::core::Sensorfw::request_sensor()
 
     m_sessionid = the_result;
 
-    GINFO("Got new plugin for %s with pid %i and session %i", plugin_string(), m_pid, m_sessionid);
+    g_debug("Got new plugin for %s with pid %i and session %i", plugin_string(), m_pid, m_sessionid);
 }
 
 bool sensorfw_proxy::core::Sensorfw::release_sensor()
@@ -204,7 +204,7 @@ bool sensorfw_proxy::core::Sensorfw::release_sensor()
 
     if (!result)
     {
-        GINFO("failed to release SensorfwSensor");
+        g_debug("failed to release SensorfwSensor");
         return false;
     }
 
@@ -263,7 +263,7 @@ void sensorfw_proxy::core::Sensorfw::start()
 
     if (!result)
     {
-        GINFO("failed to start SensorfwSensor");
+        g_debug("failed to start SensorfwSensor");
         stop();
         return;
     }
@@ -291,7 +291,7 @@ void sensorfw_proxy::core::Sensorfw::stop()
 
     if (!result)
     {
-        GINFO("failed to stop SensorfwSensor");
+        g_debug("failed to stop SensorfwSensor");
     } else {
         g_variant_unref(result);
     }
@@ -317,7 +317,7 @@ void sensorfw_proxy::core::Sensorfw::set_interval(int interval) {
 
     if (!result)
     {
-        GINFO("set_interval() failed to releaseSensor");
+        g_debug("set_interval() failed to releaseSensor");
         return;
     }
     g_variant_unref(result);

@@ -26,8 +26,6 @@
 #include <utils/event_loop_handler_registration.h>
 #include <utils/socketreader.h>
 
-#include <gutil_log.h>
-
 #pragma once
 
 class SocketReader;

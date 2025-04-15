@@ -27,8 +27,24 @@ static const char *orientations[] = {
         NULL
 };
 
+static const char *tilts[] = {
+        "undefined",
+        "vertical",
+        "tilted-up",
+        "tilted-down",
+        "face-up",
+        "face-down",
+        NULL
+};
+
 const char *
 orientation_to_string (OrientationUp o)
 {
         return orientations[o];
+}
+
+const char *
+tilt_to_string (Tilt t)
+{
+        return tilts[t];
 }

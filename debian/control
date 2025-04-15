@@ -5,12 +5,10 @@ Build-Depends: cmake,
                debhelper-compat (= 13),
                dbus,
                libglib2.0-dev,
-               libgudev-1.0-dev,
-               libglibutil-dev,
                pkg-config,
                systemd,
 Maintainer: Bardia Moshiri <bardia@furilabs.com>
-Standards-Version: 4.6.1
+Standards-Version: 4.7.0
 Homepage: https://github.com/furilabs/hadess-sensorfw-proxy
 
 Package: hadess-sensorfw-proxy

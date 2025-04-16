@@ -1,15 +1,14 @@
 Source: hadess-sensorfw-proxy
-Section: admin
-Priority: optional
-Build-Depends: cmake,
-               debhelper-compat (= 13),
-               dbus,
-               libglib2.0-dev,
-               pkg-config,
-               systemd,
 Maintainer: Bardia Moshiri <bardia@furilabs.com>
+Section: misc
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libgio-2.0-dev,
+               cmake,
+               pkg-config,
 Standards-Version: 4.7.0
 Homepage: https://github.com/furilabs/hadess-sensorfw-proxy
+Vcs-Git: https://github.com/furilabs/hadess-sensorfw-proxy.git
 
 Package: hadess-sensorfw-proxy
 Section: libs

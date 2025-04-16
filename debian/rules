@@ -2,7 +2,3 @@
 
 %:
 	dh $@ --parallel --buildsystem cmake
-
-override_dh_install:
-	dh_install
-	dh_missing --fail-missing

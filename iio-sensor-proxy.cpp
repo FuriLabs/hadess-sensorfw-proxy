@@ -711,16 +711,6 @@ free_sensor_data (SensorData *data)
 	if (data == NULL)
 		return;
 
-	data->orientation_sensor.reset ();
-	data->light_sensor.reset ();
-	data->compass_sensor.reset ();
-	data->proximity_sensor.reset ();
-
-	data->prox_registration.reset ();
-	data->light_registration.reset ();
-	data->orientation_registration.reset ();
-	data->compass_registration.reset ();
-
 	if (data->name_id != 0) {
 		g_bus_unown_name (data->name_id);
 		data->name_id = 0;
@@ -733,6 +723,12 @@ free_sensor_data (SensorData *data)
 	g_clear_pointer (&data->introspection_data, g_dbus_node_info_unref);
 	g_clear_object (&data->connection);
 	g_clear_pointer (&data->loop, g_main_loop_unref);
+
+	data->orientation_sensor.reset ();
+	data->light_sensor.reset ();
+	data->compass_sensor.reset ();
+	data->proximity_sensor.reset ();
+
 	g_free (data);
 }
 

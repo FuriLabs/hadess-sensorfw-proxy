@@ -37,12 +37,10 @@ add_library(
 )
 
 target_link_libraries(sensorfw-core PUBLIC
-    ${GIO_LDFLAGS} ${GIO_LIBRARIES}
     ${GIO_UNIX_LDFLAGS} ${GIO_UNIX_LIBRARIES}
 )
 
 target_include_directories(sensorfw-core PUBLIC
-    ${GIO_INCLUDE_DIRS}
     ${GIO_UNIX_INCLUDE_DIRS}
 
     include

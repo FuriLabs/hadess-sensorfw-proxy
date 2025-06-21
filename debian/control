@@ -4,9 +4,10 @@ Section: misc
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
                libgio-2.0-dev,
+               libglib2.0-dev-bin,
                cmake,
                pkg-config,
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Homepage: https://github.com/furilabs/hadess-sensorfw-proxy
 Vcs-Git: https://github.com/furilabs/hadess-sensorfw-proxy.git
 
